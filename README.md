@@ -1,93 +1,93 @@
 # Alist-on-Glitch
 
-## 考虑免费数据库都不长久，做了存档本库的决定。
+## Xét thấy cơ sở dữ liệu miễn phí sẽ không tồn tại lâu nên tôi đã quyết định lưu trữ cơ sở dữ liệu này.
 
-## 概述
+## Tổng quan
 
-本项目用于在 Glitch 免费服务上部署 Alist。
+Dự án này được sử dụng để triển khai dịch vụ Alist trên Glitch miễn phí.
 
-## 注意
+## Chú ý
 
- **请勿滥用，账号封禁风险自负。**
+**Xin vui lòng không lạm dụng, bạn sẽ phải tự chịu rủi ro khi bị cấm tài khoản. **
 
- Webdav 功能可能工作不正常。
- 
-## 变量
+Chức năng Webdav có thể không hoạt động bình thường.
 
-对部署时设定的变量做如下说明。
+## Biến
 
-| 变量 | 默认值 | 说明 |
+Các biến được đặt trong quá trình triển khai được mô tả bên dưới.
+
+| biến | giá trị mặc định |
 | :--- | :--- | :--- |
-| `DATABASE_URL` | `` | 数据库连接 URL，默认留空为使用本地 sqlite 数据库 |
+`DATABASE_URL` | `` | URL kết nối cơ sở dữ liệu, được để trống theo mặc định để sử dụng cơ sở dữ liệu sqlite cục bộ |
 
-## 数据持久化
+## Tính bền vững của dữ liệu
 
-由于免费 Glitch 项目只能是公开项目，强烈建议连接外部 MySQL 或是 PostgreSQL 数据库。
+Vì các dự án Glitch miễn phí chỉ có thể là các dự án công cộng nên chúng tôi đặc biệt khuyên bạn nên kết nối với cơ sở dữ liệu MySQL hoặc PostgreSQL bên ngoài.
 
-**bit.to 将于 2023.6.29 停止服务**
+**bit.to sẽ ngừng dịch vụ vào ngày 29 tháng 6 năm 2023**
 
 <details>
-<summary><b>  planetscale.com 免费 MySQL 数据库</b></summary>
+<summary><b>  Planetscale.com Cơ sở dữ liệu MySQL miễn phí</b></summary>
 
-1. 前往 https://planetscale.com 注册账号，并新建一个数据库。
-2. 点击数据库名称，进入数据库管理页面，点击左侧的 Connect，在 "connect with" 下拉菜单中选择 Symfony。
-3. 下方 "mysql://" 开头字符串即为数据库连接 URL。密码只会显示一次，如果忘记保存了可以点击 "New password" 重新生成。
+1. Truy cập https://planetscale.com để đăng ký tài khoản và tạo cơ sở dữ liệu mới.
+2. Nhấp vào tên cơ sở dữ liệu để vào trang quản lý cơ sở dữ liệu, nhấp vào Connect ở bên trái và chọn Symfony trong menu thả xuống "connect with".
+3. Chuỗi bắt đầu bằng "mysql://" bên dưới là URL kết nối cơ sở dữ liệu. Mật khẩu sẽ chỉ được hiển thị một lần nếu bạn quên lưu nó, bạn có thể nhấp vào "New password" để tạo lại.
 </details> 
 
 <details>
-<summary><b> elephantsql 免费 PostgreSQL 数据库</b></summary>
+<summary><b> Cơ sở dữ liệu PostgreSQL miễn phí của Elephantsql</b></summary>
 
-1. 前往 https://www.elephantsql.com 注册账号，并新建一个数据库。
-2. 点击数据库名称，进入数据库管理页面，右侧的 Details 下方，复制 "URL" 项即为数据库连接 URL。
+1. Truy cập https://www.elephantsql.com để đăng ký tài khoản và tạo cơ sở dữ liệu mới.
+2. Nhấp vào tên cơ sở dữ liệu để vào trang quản lý cơ sở dữ liệu. Trong phần Details ở bên phải, sao chép mục "URL" để trở thành URL kết nối cơ sở dữ liệu.
 </details>
 
-## 部署
+## Triển khai
 
-前往 glitch.com 注册账户，然后点击链接: https://glitch.com/edit/#!/remix/glitch-blank-node
+Truy cập Glitch.com để đăng ký tài khoản và nhấp vào liên kết: https://gtch.com/edit/#!/remix/glitch-blank-node
 
-点击左侧文件列表中的 .env 文件，在文件最下方点击 Add a Variable，设置 DATABASE_URL 变量。
+Nhấp vào tệp .env trong danh sách tệp ở bên trái, nhấp vào Add a Variable ở cuối tệp và đặt biến DATABASE_URL.
 
 ![image](https://user-images.githubusercontent.com/98247050/233643773-26ec547a-a1bd-48fe-8302-4a08cf556239.png)
 
-下载[仓库文件](https://github.com/wy580477/Alist-on-Glitch/archive/refs/heads/main.zip)，然后解压缩。
+Tải xuống [tệp kho](https://github.com/wy580477/Alist-on-Glitch/archive/refs/heads/main.zip), rồi giải nén nó.
 
-将解压缩得到的除README外的文件，拖动到 glitch 项目页面左侧 Files 处: 
+Kéo các tệp được giải nén ngoại trừ README vào Tệp ở phía bên trái của trang dự án trục trặc:
 
 ![image](https://user-images.githubusercontent.com/98247050/233638576-15a9d59c-66a1-48f2-92bd-69bd1aaffa08.png)
 
-页面会弹出 overwrite 提示，全部点确定。
+Lời nhắc overwrite sẽ bật lên trên trang, nhấp vào OK.
 
-稍等片刻即部署完成。
+Đợi một lát để quá trình triển khai hoàn tất.
 
-点击左侧文件列表中的 .env 文件，在文件最下方点击 Add a Variable，设置 SITE_URL 变量，值为项目网址，例如 https://apple-prange-fruit.glitch.me
+Nhấp vào tệp .env trong danh sách tệp ở bên trái, nhấp vào Add a Variable ở cuối tệp và đặt biến SITE_URL thành URL dự án, ví dụ: https://apple-prange-fruit.glitch.me
 
 ![image](https://user-images.githubusercontent.com/98247050/233753763-8b6de304-73ce-4df3-a9d0-2eb7da2221dd.png)
 
-点击页面下方 LOGS 即可得到初始密码。
+Nhấp vào LOGS ở cuối trang để lấy mật khẩu ban đầu.
 
-点击页面下方 TERMINAL，即可执行 Alist 命令:
+Nhấp vào TERMINAL ở cuối trang để thực thi lệnh Alist:
 
 ```
-# 随机生成管理员密码
+# Tạo ngẫu nhiên mật khẩu quản trị viên
 bash start.sh admin random
 
-# 手动设置管理员密码,`NEW_PASSWORD`是指你需要设置的密码
+# Đặt mật khẩu quản trị viên theo cách thủ công, `NEW_PASSWORD` dùng để chỉ mật khẩu bạn cần đặt
 bash start.sh admin set NEW_PASSWORD
 
-# 重启 Alist
+# Khởi động lại Alist
 bash start.sh server
 
-# 查看 Alist 版本
+# Kiểm tra phiên bản Alist
 bash start.sh version
 ```
 
-访问 项目网址/status，查看运行进程。
+Truy cập trang web/trạng thái của dự án để xem quá trình đang chạy.
 
-## 通过 Cloudflare 反向代理设置自定义域名
+## Thiết lập tên miền tùy chỉnh thông qua proxy ngược Cloudflare
 
 https://github.com/wy580477/PaaS-Related/blob/main/CF_Workers_Reverse_Proxy_chs_simple.md
 
-## 鸣谢
+## Lời cảm ơn
 
 - [alist-org/alist](https://github.com/alist-org/alist)
 - [glitch-trojan](https://github.com/hrzyang/glitch-trojan)
