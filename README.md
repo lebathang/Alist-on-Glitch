@@ -8,7 +8,7 @@ Dự án này được sử dụng để triển khai dịch vụ Alist trên Gl
 
 ## Chú ý
 
-**Xin vui lòng không lạm dụng, bạn sẽ phải tự chịu rủi ro khi bị cấm tài khoản. **
+**Xin vui lòng không lạm dụng, bạn sẽ phải tự chịu rủi ro khi bị cấm tài khoản.**
 
 Chức năng Webdav có thể không hoạt động bình thường.
 
