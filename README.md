@@ -16,9 +16,9 @@ Chức năng Webdav có thể không hoạt động bình thường.
 
 Các biến được đặt trong quá trình triển khai được mô tả bên dưới.
 
-| biến | giá trị mặc định |
+| Biến | Giá trị mặc định | Mô tả|
 | :--- | :--- | :--- |
-`DATABASE_URL` | `` | URL kết nối cơ sở dữ liệu, được để trống theo mặc định để sử dụng cơ sở dữ liệu sqlite cục bộ |
+|`DATABASE_URL` | `` | URL kết nối cơ sở dữ liệu, được để trống theo mặc định để sử dụng cơ sở dữ liệu sqlite cục bộ |
 
 ## Tính bền vững của dữ liệu
 
