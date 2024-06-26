@@ -43,7 +43,7 @@ Vì các dự án Glitch miễn phí chỉ có thể là các dự án công c�
 
 ## Triển khai
 
-Truy cập Glitch.com để đăng ký tài khoản và nhấp vào liên kết: https://gtch.com/edit/#!/remix/glitch-blank-node
+Truy cập Glitch.com để đăng ký tài khoản và nhấp vào liên kết: https://glitch.com/edit/#!/remix/glitch-blank-node
 
 Nhấp vào tệp .env trong danh sách tệp ở bên trái, nhấp vào Add a Variable ở cuối tệp và đặt biến DATABASE_URL.
 
